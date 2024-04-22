@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TaskAPI.Abstractions;
 using TaskAPI.Application.Services;
-using TaskAPI.Domain.Models;
 
 namespace TaskAPI.Controllers;
 
