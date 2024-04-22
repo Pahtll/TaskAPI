@@ -10,7 +10,7 @@ namespace TaskAPI.Controllers;
 [Route("[controller]")]
 public class UserController(IUserService userService) : ControllerBase
 {
-    [HttpGet]
+    [HttpGet("/GetAllUsers")]
     public async Task<ActionResult<List<UserResponse>>> GetAllUsers()
     {
         try
@@ -29,7 +29,7 @@ public class UserController(IUserService userService) : ControllerBase
         }
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("/ById/{id:guid}")]
     public async Task<ActionResult<UserResponse>> GetUserById(Guid id)
     {
         try
@@ -48,7 +48,7 @@ public class UserController(IUserService userService) : ControllerBase
         }
     }
 
-    [HttpGet("{name}")]
+    [HttpGet("/ByName/{name}")]
     public async Task<ActionResult<UserResponse>> GetUserByName(string name)
     {
         try
@@ -67,7 +67,7 @@ public class UserController(IUserService userService) : ControllerBase
         }
     }
 
-    [HttpGet("{companyId:guid}")]
+    [HttpGet("/ByCompanyId/{companyId:guid}")]
     public async Task<ActionResult<List<UserResponse>>> GetAllUsersByCompanyId([FromBody] Guid companyId)
     {
         try
@@ -86,7 +86,7 @@ public class UserController(IUserService userService) : ControllerBase
         }
     }
     
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("/DeleteUser/{id:guid}")]
     public async Task<ActionResult<Guid>> DeleteUser([FromBody] Guid id)
     {
         try
@@ -101,7 +101,7 @@ public class UserController(IUserService userService) : ControllerBase
         }
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("/UpdateUser/{id:guid}")]
     public async Task<ActionResult<Guid>> UpdateUser([FromBody] Guid id, string name, string password, string phoneNumber,
         Guid companyId, bool isBoss)
     {

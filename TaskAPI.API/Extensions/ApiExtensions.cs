@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using TaskAPI.Controllers;
 using TaskAPI.Endpoints;
 using TaskAPI.Infrastructure;
 
